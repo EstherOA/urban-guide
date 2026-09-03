@@ -29,7 +29,10 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  font-size: 14px;
+  font-size: 1.2rem;
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 img {
@@ -85,6 +88,7 @@ section:last-child {
 .storage-unit {
   color: var(--blue-200);
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 .storage-unit-range {
@@ -132,10 +136,48 @@ section:last-child {
   align-items: center;
   gap: 6px;
   z-index: 1;
+  width: fit-content;
   left: calc(50% - 60px);
   position: absolute;
 }
 
 h3 {
   font-size: 32px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 992px) {
+
+  body {
+    background-image: url(./images/bg-desktop.png);
+    background-position: bottom left;
+    background-size: contain;
+  }
+
+  main {
+    flex-direction: row;
+    gap: 24px;
+    align-items: end;
+  }
+
+  .storage-left {
+    border-bottom-right-radius: 0;
+    top: -36px;
+    left: unset;
+    right: 24px
+  }
+
+  .storage-left::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    right: 0px;
+    border-width: 15px 0px 0px 15px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent; 
+  }
+
+  .storage-unit-range {
+    margin-bottom: 0;
+  }
 }
